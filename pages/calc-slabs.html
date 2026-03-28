@@ -1,0 +1,38 @@
+<section class="card structural-card">
+    <div class="card-header">
+        <h2>Slab Calculation (Laje)</h2>
+        <p>Enter slab dimensions and distributed load parameters</p>
+    </div>
+    
+    <div class="card-body">
+        <form id="calc-slab-form">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="slab-length">Length X (m)</label>
+                    <input type="number" id="slab-length" name="slab-length" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="slab-width">Width Y (m)</label>
+                    <input type="number" id="slab-width" name="slab-width" step="0.01" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="slab-thickness">Thickness (cm)</label>
+                    <input type="number" id="slab-thickness" name="slab-thickness" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="slab-load">Distributed Load (kN/m²)</label>
+                    <input type="number" id="slab-load" name="slab-load" step="0.01" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-calculate" style="background-color: #8b5cf6;">
+                <i data-lucide="calculator" class="btn-icon"></i> Calculate Slab
+            </button>
+
+        </form>
+    </div>
+</section>

@@ -1,0 +1,204 @@
+/* =========================================
+   RESET E BASE
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+    height: 100vh;
+    background-color: #f8fafc;
+    color: #333;
+    overflow: hidden;
+}
+
+/* =========================================
+   CABEÇALHO SUPERIOR FIXO (TOP BAR)
+========================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #94a3b8; /* Linha de separação escura */
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-email {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.logout-btn {
+    padding: 8px 16px;
+    border: 1px solid #94a3b8;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #f1f5f9;
+}
+
+/* =========================================
+   ESTRUTURA INFERIOR E MENU LATERAL
+========================================= */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #94a3b8;
+    padding: 24px 16px; /* Padding travado para não dar salto na animação */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    height: 100%;
+    flex-shrink: 0; /* Impede o esmagamento no telemóvel */
+}
+
+.sidebar.minimized {
+    width: 80px;
+}
+
+.toggle-btn {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    margin-left: 4px; /* Margem travada na esquerda */
+    transition: background-color 0.2s, color 0.2s;
+    outline: none;
+    flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+    background-color: #f1f5f9;
+    color: #333;
+}
+
+.menu-item {
+    padding: 12px 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: #f1f5f9;
+}
+
+.menu-item.active {
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+.menu-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    min-width: 24px;
+}
+
+/* Dimensionamento dos Ícones Lucide SVG na Casca */
+.menu-icon svg, .toggle-btn svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2px;
+}
+
+.menu-text {
+    margin-left: 12px;
+    transition: opacity 0.2s ease;
+    opacity: 1;
+}
+
+/* Animação suave (fantasma) do texto ao minimizar */
+.sidebar.minimized .menu-text {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================================
+   ÁREA PRINCIPAL (O PALCO)
+========================================= */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#app-content {
+    padding: 32px 48px;
+    width: 100%;
+}
+
+/* =========================================
+   RESPONSIVIDADE (TELEMÓVEIS E TABLETS)
+========================================= */
+@media (max-width: 768px) {
+    .header {
+        padding: 0 16px;
+    }
+    
+    .user-email {
+        display: none; 
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar.minimized {
+        width: 70px;
+    }
+
+    #app-content {
+        padding: 24px 16px;
+    }
+}

@@ -1,0 +1,32 @@
+<section class="card structural-card">
+    <div class="card-header">
+        <h2>Foundation Calculation (Fundação)</h2>
+        <p>Enter soil bearing capacity and column load</p>
+    </div>
+    
+    <div class="card-body">
+        <form id="calc-foundation-form">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="column-load">Column Load / Carga (kN)</label>
+                    <input type="number" id="column-load" name="column-load" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="soil-tension">Soil Bearing Capacity (MPa)</label>
+                    <input type="number" id="soil-tension" name="soil-tension" step="0.01" required>
+                </div>
+            </div>
+
+            <div class="form-group material-group">
+                <label for="foundation-depth">Estimated Depth (m)</label>
+                <input type="number" id="foundation-depth" name="foundation-depth" step="0.1" required>
+            </div>
+
+            <button type="submit" class="btn-calculate" style="background-color: #f59e0b;">
+                <i data-lucide="calculator" class="btn-icon"></i> Calculate Foundation
+            </button>
+
+        </form>
+    </div>
+</section>
